@@ -20,34 +20,61 @@ public class MoningTest_0619 {
         String greeting = "Welcome to Shopping Mall";
         String tagline = "Welcome to Book Market!";
 
+        boolean quit = false;
 
-        System.out.println("****************************************************");
+        while (quit==false) {
+            System.out.println("****************************************************");
 
-        System.out.println("\t\t"+greeting);
-        System.out.println("\t\t"+tagline);
+            System.out.println("\t\t" + greeting);
+            System.out.println("\t\t" + tagline);
 
-        System.out.println("****************************************************");
-        System.out.println("1. 고객 정보 확인하기       5. 바구니에 항목 추가하기");
-        System.out.println("2. 장바구니 상품 목록 보기   6. 장바구니의 항목 수량 줄이기");
-        System.out.println("3. 장바구니 비우기          7. 장바구니의 항목 삭제하기");
-        System.out.println("4. 영수증 표시하기          8. 종료");
-        System.out.println("****************************************************");
+            System.out.println("****************************************************");
+            System.out.println("1. 고객 정보 확인하기       5. 바구니에 항목 추가하기");
+            System.out.println("2. 장바구니 상품 목록 보기   6. 장바구니의 항목 수량 줄이기");
+            System.out.println("3. 장바구니 비우기          7. 장바구니의 항목 삭제하기");
+            System.out.println("4. 영수증 표시하기          8. 종료");
+            System.out.println("****************************************************");
 
-        System.out.print("메뉴 번호를 선택해주세요 ");
-        int menuNum = Integer.parseInt(sc.next());;
-        System.out.println(menuNum+"번을 선택했습니다.");
+            System.out.print("\n메뉴 번호를 선택해주세요 ");
+            int menuNum = Integer.parseInt(sc.next());
+            ;
+            System.out.println(menuNum + "번을 선택했습니다.\n");
 
+            if (menuNum < 1 || menuNum > 8) {
+                System.out.println("메뉴는 1부터 8까지의 숫자로 입력해 주세요!");
 
-        switch (menuNum){
-            case 1 -> System.out.println("1. 고객 정보 확인하기");
-            case 2 -> System.out.println("2. 장바구니 상품 목록 보기");
-            case 3 -> System.out.println("3. 장바구니 비우기");
-            case 4 -> System.out.println("4. 영수증 표시하기");
-            case 5 -> System.out.println("5. 바구니에 항목 추가하기");
-            case 6 -> System.out.println("6. 장바구니의 항목 수량 줄이기");
-            case 7 -> System.out.println("7. 장바구니의 항목 삭제하기");
-            case 8 -> System.out.println("8. 종료");
+            } else {
+                switch (menuNum) {
+                    case 1:
+                        System.out.println("1. 고객 정보 확인하기");
+                        System.out.println("고객 이름 : " + mk.getName() + ", 고객 번호 : " + mk.getPhoneNum());
+                        break;
+                    case 2:
+                        System.out.println("2. 장바구니 상품 목록 보기");
+                        break;
+                    case 3:
+                        System.out.println("3. 장바구니 비우기");
+                        break;
+                    case 4:
+                        System.out.println("4. 영수증 표시하기");
+                        break;
+                    case 5:
+                        System.out.println("5. 바구니에 항목 추가하기");
+                        break;
+                    case 6:
+                        System.out.println("6. 장바구니의 항목 수량 줄이기");
+                        break;
+                    case 7:
+                        System.out.println("7. 장바구니의 항목 삭제하기");
+                        break;
+                    case 8:
+                        System.out.println("8. 종료");
+                        System.out.println("온라인 도서몰을 찾아주셔서 감사합니다. 다음에 다시 뵙겠습니다.");
+                        quit = true;
+                        break;
+                }//switch end
 
-        }
+            }//else end
+        }//while end
     }
 }
